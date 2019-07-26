@@ -1,0 +1,20 @@
+public class HappyBirthdayTest {
+    public class SMSBrokerMock extends SMSBroker {
+        public SMSBrokerMock() throws Exception {
+            super();
+        }
+        protected void connectToServers() throws Exception {
+            // Do nothing
+        }
+    }
+}
+
+
+public class SMSBroker {
+
+    public static void setInstance(SMSBroker broker) {
+        SMSBroker.broker = broker;
+    }
+
+   public void checkAnniversaryDate() throws Exception {
+        SMSBroker.setInstance(new SMSBrokerMock());

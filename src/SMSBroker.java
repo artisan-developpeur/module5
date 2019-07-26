@@ -2,7 +2,7 @@ public class SMSBroker {
 
     private static SMSBroker broker = null;
 
-    private SMSBroker() throws Exception {
+    protected SMSBroker() throws Exception {
         connectToServers();
     }
 
@@ -11,6 +11,14 @@ public class SMSBroker {
             broker = new SMSBroker();
         }
         return broker;
+    }
+
+    public static void setInstance(SMSBroker broker) {
+        SMSBroker.broker = broker;
+    }
+
+    public static void resetInstance() throws Exception {
+        SMSBroker.broker = new SMSBroker();
     }
 
     public void sendSMS(String phoneNumber, String message) throws Exception {
