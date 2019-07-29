@@ -1,6 +1,12 @@
 public class HappyBirthdayWithPhoneValidator extends HappyBirthday {
     @Override
     public void checkAnniversaryDate(Employee e) throws Exception {
+    }
+}
+
+public class HappyBirthdayWithPhoneValidator extends HappyBirthday {
+    @Override
+    public void checkAnniversaryDate(Employee e) throws Exception {
         if (e.getPhoneNumber().length() != 10) {
             throw new Exception("Invalid phone number");
         }
