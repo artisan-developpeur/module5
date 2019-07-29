@@ -26,7 +26,6 @@ public class SMSBroker {
     }
 
     protected void connectToServers() throws Exception {
-        throw new Exception("Cannot connect to server");
         // connect to the real network to send the SMS
     }
 

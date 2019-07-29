@@ -16,8 +16,4 @@ public class HappyBirthday {
             );
         }
     }
-
-    private Boolean isPhoneNumberValid(String phoneNumber) {
-        return false;
-    }
 }

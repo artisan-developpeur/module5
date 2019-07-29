@@ -1,0 +1,27 @@
+public class HappyBirthdayWithPhoneValidator extends HappyBirthday {
+    @Override
+    public void checkAnniversaryDate(Employee e) throws Exception {
+        if (e.getPhoneNumber().length() != 10) {
+            throw new Exception("Invalid phone number");
+        }
+        super.checkAnniversaryDate(e);
+    }
+}
+
+
+import org.junit.Test;
+import java.util.Date;
+import static org.junit.Assert.*;
+
+public class HappyBirthdayWithPhoneValidatorTest {
+
+    @Test(expected = Exception.class)
+    public void checkAnniversaryDate() throws Exception {
+        Employee benoit = new Employee("+33612",
+                "Benoit",
+                "Gantaume",
+                new Date(1979, 6, 29));
+        HappyBirthday hb = new HappyBirthdayWithPhoneValidator();
+        hb.checkAnniversaryDate(benoit);
+    }
+}
